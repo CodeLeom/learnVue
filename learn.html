@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Vue</title>
+    <link rel="stylesheet" type="text/css" href="learn.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="root">
+        <input v-model="newCat" @keyup.enter="addKitty" :class="[addKitty.length < 2 ? 'red' : 'green']">
+        <button @click="addKitty">
+            + Add
+        </button>
+
+        <ul>
+            <li v-for="cat in cats">{{cat.name | capitalize}}</li>
+        </ul>
+
+        <cat-list :cats= "cats" />
+
+    </div>
+
+    
+
+
+    <script src="learn.js"></script>
+</body>
+</html>
